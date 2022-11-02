@@ -3,7 +3,7 @@ import { Editor, EditorState } from "react-draft-wysiwyg";
 import "/node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 export default function AddArticle() {
-  const [editor, setEditor] = useState(() => EditorState.createEmpty());
+  const [editor, setEditor] = useState();
 
   const handlePublish = () => {
     const data = {
