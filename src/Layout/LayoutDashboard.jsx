@@ -6,11 +6,11 @@ export default function LayoutDashboard({ children, title, banner }) {
   // const [banner, setBanner] = useState(false)
   return (
     <>
-      <div className="flex">
-        <div className="bg-blue-400 h-screen w-1/5">
+      <div className="flex h-full w-full">
+        <div className="bg-blue-400 min-h-screen w-1/5">
           <Sidebar />
         </div>
-        <div className="bg-gray-100 w-4/5">
+        <div className="bg-gray-100 w-full">
           <div className="bg-white flex shadow-2xl flex-col">
             <div className="flex justify-between px-8 py-3">
               <div>{title}</div>
