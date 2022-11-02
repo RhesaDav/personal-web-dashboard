@@ -2,23 +2,41 @@ import React from "react";
 import LayoutDashboard from "../../Layout/LayoutDashboard";
 import { AiFillDelete } from "react-icons/ai";
 import { RiEditFill } from "react-icons/ri";
-import {FiSearch} from "react-icons/fi"
+import { FiSearch } from "react-icons/fi";
+import Modal from "../../components/Modal";
+import { useState } from "react";
+import AddArticle from "../../components/AddArticle";
 
 export default function Articles() {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleModal = () => {
+    setShowModal(!showModal);
+  };
+
   return (
     <div>
       <LayoutDashboard title="Articles">
         <div className="flex flex-col gap-4">
-          <h1 className="text-xl font-bold">Article</h1>
+          <h1 className="text-xl font-bold">Article List</h1>
           <div className="flex justify-between">
             <div className="bg-white w-full min-h-96 justify-between flex flex-col border rounded-xl shadow-xl">
               <div className="flex flex-col p-3 gap-4">
                 <div className="flex justify-between items-center px-5">
                   <div className="flex items-cneter">
-                    <input type="text" className="border h-9 px-3 py-1  rounded-l-full border-slate-300 w-72 focus:outline-none focus:border-blue-500" placeholder="Search articles ..." />
-                    <button className="border h-9 rounded-r-full px-3 py-1 hover:bg-blue-500 hover:border-blue-500"><FiSearch/></button>
+                    <input
+                      type="text"
+                      className="border h-9 px-3 py-1  rounded-l-full border-slate-300 w-72 focus:outline-none focus:border-blue-500"
+                      placeholder="Search articles ..."
+                    />
+                    <button className="border h-9 rounded-r-full px-3 py-1 hover:bg-blue-500 hover:border-blue-500">
+                      <FiSearch />
+                    </button>
                   </div>
-                  <button className="border hover:scale-110 transition duration-150 ease-in-out bg-green-500 py-1 px-2 rounded-lg text-black hover:font-semibold">
+                  <button
+                    onClick={handleModal}
+                    className="border hover:scale-110 transition duration-150 ease-in-out bg-green-500 py-1 px-2 rounded-lg text-black hover:font-semibold"
+                  >
                     Create New Article
                   </button>
                 </div>
@@ -120,6 +138,14 @@ export default function Articles() {
           </div>
         </div>
       </LayoutDashboard>
+
+      {/* Modal */}
+      <Modal openModal={showModal} closeModal={handleModal} title='Add Article'>
+        <div>
+          <AddArticle />
+        </div>
+      </Modal>
+      {/* End of modal */}
     </div>
   );
 }
