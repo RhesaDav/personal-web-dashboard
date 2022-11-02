@@ -1,6 +1,7 @@
 import React from "react";
 import { GrFormClose } from "react-icons/gr";
 export default function Modal({ openModal, closeModal, children, title }) {
+
   return (
     <>
       {openModal ? (
