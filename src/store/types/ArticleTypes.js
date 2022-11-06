@@ -1,0 +1,3 @@
+export const LIST_ARTICLE = 'LIST_ARTICLE'
+export const DELETE_ARTICLE = 'DELETE_ARTICLE'
+export const CREATE_ARTICLE = 'CREATE_ARTICLE'

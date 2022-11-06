@@ -5,11 +5,13 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Articles from "./pages/dashboard/Articles";
 import Projects from "./pages/dashboard/Projects";
+import Login from "./pages/auth/Login";
 
 function App() {
   return (
     <div>
       <Routes>
+        <Route path="login" element={<Login/>}/>
         <Route path="" element={<Navigate to="dashboard" />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="articles" element={<Articles />} />
